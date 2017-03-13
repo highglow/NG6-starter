@@ -1,22 +1,46 @@
 @import '../common';
 
-.navbar {
-  height: 6.5rem;
-  background-color: $primaryColor;
-  padding: 1rem;
+$menu-color:#5D6B7C;
 
-  .nav-links,
-  .logo {
-    display: inline-block;
-  }
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
 
-  .logo {
-    color: $lightTextColor;
-    margin-right: 50%;
-  }
 
-  .nav-links span {
-    color: $lightTextColor;
-    font-size: 1.6rem;
-  }
+@mixin navbar-font{
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em
+}
+
+.topnav {
+  display: inline-block;
+  @include navbar-font;
+  @include stripped-background;
+  width:100%;
+  height:3em;
+}
+
+ul {
+  margin:0;
+  padding:0;
+  height:100%;
+
+  > li {
+    position:relative;
+    float:left;
+    width:120px;
+    height:100%;
+    list-style-type: none;
+    color:$menu-color;
+    text-align:center;
+
+   > a{
+    @include vertical-align
+   }
+  } 
+
+}
+
+ul > li:not(:last-child){
+  border-right:1px solid $primaryColor;
 }

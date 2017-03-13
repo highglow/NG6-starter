@@ -1,0 +1,76 @@
+@import '../../common/common';
+
+@mixin header-background{
+	background-repeat: no-repeat;
+	background-image: url('/static/img/bg.png');
+	background-position:center;
+	background-size: 100% auto;
+}
+
+.header{
+	position:relative;
+	@include header-background;
+	height:186px;
+	top:-4px; //hack :P
+}
+
+.search-box{
+	@include vertical-align;
+	width:100%;
+	text-align:center;
+}
+
+.results{
+	width:90%;
+	margin:0 auto;
+	padding:1em;
+	text-align:center;
+}
+
+.agent-item{
+	width:325px;
+	display:inline-block;
+}
+
+.agents{
+   position: relative;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.agent-item{
+	margin:1em;
+	height:100px;
+}
+
+.agent-details{
+	padding-top:25px;
+	padding-left:15px;
+	display:block;
+}
+
+.agent-name{
+	font-size:1em;
+	font-weight:bold;
+}
+
+.agency-name{
+	font-size:0.8em;
+}
+
+.avatar-image{
+	height:100px;
+	width:100px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.left{
+	float:left;
+}
+
+.right{
+	float:left;
+}

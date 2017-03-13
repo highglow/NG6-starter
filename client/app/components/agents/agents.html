@@ -1,0 +1,20 @@
+<navbar></navbar>
+<div class="header">
+	<form ng-submit="$ctrl.search(userInput)" class="search-box">
+		<input id="searchTerm" ng-model="userInput" type="text"/>
+		<button type="submit">SEARCH</button>
+	</form>
+</div>
+<div class="results">
+	<div ng-repeat="agent in $ctrl.agents" class="agent-item">
+		<div class="left">
+			<img src={{agent.ImageUrl}} class="avatar-image" />
+		</div>
+		<div class="right">
+			<div class="agent-details">
+				<div class="agent-name">{{agent.Name}}<div>
+				<div class="agency-name">{{agent.SecondaryName | limitTo: 25}}</div>
+			<div>
+		</div>
+	</div>
+</div>

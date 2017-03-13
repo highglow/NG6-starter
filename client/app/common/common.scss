@@ -1,18 +1,69 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
-$primaryColor:   #0277bd;
-$accentColor:    #1de9b6;
-$bgColor:        #efefef;
-$darkBgColor:    #263238;
-$lightBgColor:   #37474f;
+//Color pallette
+$primaryColor:   #456773;
+$accentColor:    #AAB8C9;
+$white:   white;
+$primaryBackgroundColor: $white;
+$secondaryBackgroundColor:  #F4F4F4;
 $lightTextColor: #f5f5f5;
 $darkTextColor:  #212121;
 
-body {
-   height: 100%;
-   // browsers default to 16px for font-size,
-   // so setting top-level font-size to 62.5%
-   // scales 1rem to equal 10px.
-   font: 62.5% 'Roboto', sans-serif;
+$font-stack: Lato;
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+$height-normal:3em;
+
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
 }
 
+@mixin stripped-background{
+  background: linear-gradient($primaryBackgroundColor 50%, $secondaryBackgroundColor 50%);
+}
+
+body {
+   height: 100%;
+   font-family: $font-stack;
+   color:$primaryColor;
+} 
+
+#{$a-tags} {
+  color: $primaryColor;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: $accentColor;
+}	
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  } 
+}
+
+button{
+	@include stripped-background;
+	height:51px;
+  width:6em;
+}
+
+input{
+  padding-left:1em;
+  height:46px;
+  width:400px;
+}
